@@ -53,13 +53,26 @@ function buttonMinus() {
 }
 
 function buttonMulti() {
-    userArray.push('x');
+    userArray.push('*');
 }
 
 function buttonDivision() {
-    userArray.push('÷');
+    userArray.push('/');
 }
 
+function buttonBackspace() {
+    userArray.pop();
+}
+
+function buttonAC() {
+    userArray = [];
+}
+
+function buttonPercentage() {
+    let join = userArray.join("")
+    let num = Number(join)
+    console.log(num / 100)
+}
 // function concatenate(array) {
 //     const string = array.join('');
 //     let concatedArr = [];
@@ -115,5 +128,6 @@ function buttonDivision() {
 function buttonEqual() {
     let join = userArray.join("");
     console.log(eval(join))
+    document.getElementById("display").innerHTML = eval(join);
 }
 
